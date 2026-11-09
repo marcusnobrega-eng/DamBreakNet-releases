@@ -6,10 +6,12 @@ First test version for non-commercial users.
 
 - `DamBreakNet_v0.2.0.zip`: the QGIS plugin, with the engine, the three trained seeds and
   two prepared demo dams (Pirapama and Nilo Coelho). Install it with QGIS "Install from ZIP".
-- `environment.yml` and `requirements.txt`: the Python packages the engine needs.
+- `environment.yml` and `requirements.txt`: only if you manage the engine's Python yourself.
 
 ## What it does
 
+- Sets up its own engine from the panel ("Set up the engine", about 1 GB, once), and signs
+  in to Earth Engine from the panel.
 - Finds any of the 28,083 SNISB dams by name, town or code, or on the map.
 - Prepares a dam outside SNISB from a drawn crest and its height, volume and material.
 - Runs DamBreakNet, LNEC/ANA and HAND on the same inputs, with map-quality flags and a

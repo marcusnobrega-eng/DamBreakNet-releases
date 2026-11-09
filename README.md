@@ -101,22 +101,24 @@ Get the latest version under **[Releases](../../releases)**.
 | What | File | Size |
 |---|---|---|
 | 📦 QGIS plugin, with the trained weights and two prepared demo dams | `DamBreakNet_v0.2.0.zip` | 32 MB |
-| 🐍 Python environment for the engine | `environment.yml` (conda) or `requirements.txt` (pip) | small |
+| 🐍 Only if you manage the engine's Python yourself | `environment.yml` (conda) or `requirements.txt` (pip) | small |
 
 ### Quick start
 
-1. Create the engine's Python: `conda env create -f environment.yml`.
-2. In QGIS: **Plugins → Manage and Install Plugins → Install from ZIP**, then choose the zip.
-3. Click the DamBreakNet icon, type `pirapama` and click **Run**.
+1. In QGIS: **Plugins → Manage and Install Plugins → Install from ZIP**, then choose the zip.
+2. Click the DamBreakNet icon, then **Set up the engine**. It downloads about 1 GB once and takes
+   about 10 minutes. Nothing else to install.
+3. Type `pirapama` and click **Run**.
 
-The full steps, including the Earth Engine sign-in for new dams, are in **[INSTALL.md](INSTALL.md)**.
+For new dams, enter your Earth Engine project ID in the Settings tab and click **Sign in to Earth
+Engine**. The full steps are in **[INSTALL.md](INSTALL.md)**.
 
 ### Requirements
 
 | | Needed for | Notes |
 |---|---|---|
 | QGIS 3.22 or later | everything | tested with QGIS 3.44 on macOS |
-| A Python with the engine's packages | everything | made from `environment.yml` in about 10 minutes |
+| The engine's Python | everything | built by the plugin's **Set up the engine** button in about 10 minutes (about 1.5 GB on disk) |
 | A Google Earth Engine project | new dams | free for non-commercial use; the two demo dams run without it |
 | About 500 MB of disk | new dams | the soil file (437 MB, downloaded once) and the terrain of each dam |
 
