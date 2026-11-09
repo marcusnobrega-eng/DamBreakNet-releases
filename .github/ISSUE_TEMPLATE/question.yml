@@ -1,0 +1,11 @@
+name: Ask a question
+description: About installing, using or reading the maps.
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true

@@ -1,0 +1,31 @@
+name: Report a problem
+description: Something in the plugin failed or gave a strange map.
+title: "[Problem] "
+labels: ["problem"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: dam
+    attributes:
+      label: Dam
+      description: SNISB code or name, or "my own dam" with its location.
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Plugin version, QGIS version and operating system.
+      placeholder: "DamBreakNet 0.2.0, QGIS 3.44, Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: End of the Log tab
+      description: Paste the last 30 lines of the panel's Log tab.
+      render: text

@@ -1,6 +1,6 @@
 # Licences
 
-Copyright © 2026 Marcus Nóbrega Gomes Júnior and co-authors.
+Copyright © 2026 Marcus Nóbrega Gomes Júnior.
 
 **Status: proposed, pending review by Stanford's Office of Technology Licensing.**
 The full licence texts will be added to this package before it is distributed.

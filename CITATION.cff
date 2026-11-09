@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use DamBreakNet or its maps, please cite the paper below."
+title: "DamBreakNet for QGIS"
+type: software
+version: 0.2.0
+date-released: 2026-11-08
+authors:
+  - family-names: "Gomes Júnior"
+    given-names: "Marcus Nóbrega"
+    affiliation: "Stanford University"
+    email: "mngomes@stanford.edu"
+url: "https://github.com/marcusnobrega-eng/DamBreakNet-releases"
+keywords:
+  - dam break
+  - flood mapping
+  - neural network
+  - QGIS
+  - Brazil
+  - SNISB
+preferred-citation:
+  type: article
+  title: "DamBreakNet: A Hydrograph-Conditioned Neural Model for Dam-Break Flood Mapping"
+  authors:
+    - family-names: "Gomes Júnior"
+      given-names: "Marcus Nóbrega"
+      affiliation: "Stanford University"
+  year: 2026
+  status: submitted
