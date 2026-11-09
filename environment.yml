@@ -1,0 +1,17 @@
+# conda env create -f environment.yml, then conda activate dambreaknet
+name: dambreaknet
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy>=2.0
+  - scipy>=1.13
+  - rasterio>=1.4
+  - shapely>=2.0
+  - pyproj>=3.6
+  - pandas>=2.2
+  - geopandas>=1.0
+  - pyogrio>=0.9
+  - requests>=2.31
+  - pytorch>=2.3
+  - earthengine-api>=1.0

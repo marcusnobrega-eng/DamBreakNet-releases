@@ -1,0 +1,13 @@
+# Python packages for the DamBreakNet engine (the Python the panel's Settings tab points to).
+# Tested with Python 3.13 and these versions; older 2.x/1.x releases are likely to work.
+numpy>=2.0
+scipy>=1.13
+rasterio>=1.4
+shapely>=2.0
+pyproj>=3.6
+pandas>=2.2
+geopandas>=1.0
+pyogrio>=0.9
+requests>=2.31
+torch>=2.3
+earthengine-api>=1.0
