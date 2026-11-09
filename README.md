@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/logo.png" alt="DamBreakNet logo: a broken dam feeding a small neural network" width="120">
+  <img src="images/logo_name.png" alt="DamBreakNet logo: the DamBreakNet box of the paper's study-design figure, a small neural network above the name" width="220">
 </p>
 
 <h1 align="center">DamBreakNet for QGIS</h1>
