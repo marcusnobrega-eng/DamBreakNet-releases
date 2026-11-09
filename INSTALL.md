@@ -29,9 +29,13 @@ The methods run in their own Python, so they do not touch the Python inside QGIS
 
 1. In the panel, click **Set up the engine** and then Yes.
 2. Wait about 10 minutes. The plugin downloads micromamba (about 10 MB) and the
-   engine's packages (about 1 GB, from conda-forge) and builds the engine in the
-   folder `.dambreaknet` of your home folder. The progress bar and the Log tab show
-   what it is doing.
+   engine's packages (about 1 GB, from conda-forge) and builds the engine in
+   `C:\dbn` on Windows (or `.dbn` in your user folder, if `C:\dbn` cannot be made),
+   and in `.dambreaknet` in your home folder on macOS and Linux. The progress bar and
+   the Log tab show what it is doing.
+
+If the setup stops, click **Set up the engine** again. It removes the unfinished
+engine and starts over.
 
 You do this once. Nothing else needs to be installed.
 
@@ -92,6 +96,6 @@ your operating system and QGIS version.
 
 ## Removing it
 
-Uninstall the plugin in Manage and Install Plugins, and delete the folder
-`.dambreaknet` in your home folder (the engine) and, if you wish, `DamBreakNet_SNISB`
-in Documents (the prepared dams).
+Uninstall the plugin in Manage and Install Plugins, then delete the engine's folder
+(`C:\dbn` or `.dbn` on Windows, `.dambreaknet` on macOS and Linux) and, if you wish,
+`DamBreakNet_SNISB` in Documents (the prepared dams).
