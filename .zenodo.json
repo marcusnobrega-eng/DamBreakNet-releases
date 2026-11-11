@@ -1,0 +1,11 @@
+{
+  "upload_type": "software",
+  "title": "DamBreakNet for QGIS",
+  "description": "<p>A QGIS plugin that maps the maximum flood after a dam break. It runs DamBreakNet, a hydrograph-conditioned convolutional neural network, with its three trained models, and the LNEC/ANA and HAND methods on the same inputs, then checks each map and gives a triage (rapid map, or check with a 2D model). Trained on dams in Brazil; outside Brazil it translates ESA WorldCover land cover to the MapBiomas classes the model reads, and its accuracy there is untested.</p><p>For non-commercial use. The QGIS panel is under GPL-2.0-or-later, the engine under the PolyForm Noncommercial License 1.0.0, and the trained models under CC BY-NC 4.0. These licences are proposed and under review by Stanford's Office of Technology Licensing. See LICENSE.md.</p>",
+  "creators": [
+    {"name": "Gomes Júnior, Marcus Nóbrega", "affiliation": "Department of Earth System Science, Stanford University"}
+  ],
+  "license": "polyform-noncommercial-1.0.0",
+  "access_right": "open",
+  "keywords": ["dam break", "flood mapping", "neural network", "QGIS", "surrogate model", "Brazil", "SNISB"]
+}
