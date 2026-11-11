@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/PyTorch-CPU-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch on the CPU">
   <img src="https://img.shields.io/badge/tested%20on-macOS-555555?logo=apple&logoColor=white" alt="Tested on macOS">
   <a href="LICENSE.md"><img src="https://img.shields.io/badge/licence-non--commercial-003049" alt="Non-commercial licence"></a>
-  <!-- ZENODO_BADGE -->
+  <a href="https://doi.org/10.5281/zenodo.24128809"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.24128809.svg" alt="DOI 10.5281/zenodo.24128809"></a>
 </p>
 
 <p align="center">
@@ -216,7 +216,8 @@ If you use DamBreakNet or its maps, please cite the paper:
 Gomes Júnior, M. N. (2026). DamBreakNet: A Hydrograph-Conditioned Convolutional Neural Network
 for Dam-Break Flood Mapping. Preprint. <!-- ARXIV_LINK -->
 
-To cite this software, use the Zenodo DOI of the release you used. <!-- ZENODO_DOI -->
+To cite this software, use its Zenodo DOI, [10.5281/zenodo.24128809](https://doi.org/10.5281/zenodo.24128809), which covers all versions. Each release
+also has its own DOI on that page.
 GitHub's **Cite this repository** button (from [CITATION.cff](CITATION.cff)) gives both.
 
 ## Licence

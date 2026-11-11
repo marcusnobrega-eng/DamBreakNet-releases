@@ -10,6 +10,7 @@ authors:
     affiliation: "Department of Earth System Science, Stanford University"
     email: "mngomes@stanford.edu"
 url: "https://github.com/marcusnobrega-eng/DamBreakNet-releases"
+doi: "10.5281/zenodo.24128809"
 keywords:
   - dam break
   - flood mapping
