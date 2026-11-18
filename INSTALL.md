@@ -10,7 +10,7 @@ There are three steps.
 
 ## 0. Download
 
-From the latest release on this page, download `DamBreakNet_v1.0.0.zip`.
+From the latest release on this page, download `DamBreakNet_v1.1.0.zip`.
 
 ## 1. Install QGIS
 
@@ -20,7 +20,7 @@ on macOS; Windows and Linux are not tested yet.
 ## 2. Install the plugin
 
 1. In QGIS, open Plugins, then Manage and Install Plugins, then Install from ZIP.
-2. Choose `DamBreakNet_v1.0.0.zip` and click Install Plugin.
+2. Choose `DamBreakNet_v1.1.0.zip` and click Install Plugin.
 3. Click the red DamBreakNet icon in the toolbar. The panel opens on the right.
 
 ## 3. Set up the engine
@@ -40,7 +40,7 @@ engine and starts over.
 On Windows, version 0.2.0 stopped here with "remove_all: The directory is not empty". Its folder
 paths were longer than the 260 characters Windows allows. Version 1.0.0 builds the engine in
 `C:\dbn` with a flat package cache, so the longest path is 209 characters. If you saw this error,
-install version 1.0.0 and click **Set up the engine** again.
+install version 1.0.0 or later and click **Set up the engine** again.
 
 You do this once. Nothing else needs to be installed.
 
@@ -60,14 +60,34 @@ Earth Engine. Earth Engine is free for non-commercial use.
 3. Click **Sign in to Earth Engine**. A browser window opens; sign in with the same
    Google account. The panel then checks that the project works.
 
-Dams outside Brazil need no Earth Engine account: the plugin downloads ESA WorldCover
-instead and warns that DamBreakNet's accuracy there is untested.
+Dams outside Brazil need no Earth Engine account for their maps: the plugin downloads
+ESA WorldCover instead and warns that DamBreakNet's accuracy there is untested. The
+population of the risk report still comes through Earth Engine.
 
 A new dam took about 2 minutes in our test, most of it to download the terrain. The
 first new dam also downloads the global OpenLandMap soil file once (437 MB) into the
 `cache` folder of the Prepared data folder. For a dam that is not in SNISB, choose
 "My own dam" in step 1, draw the crest on the map and type the height, volume and
 material.
+
+## Risk report
+
+After the maps, step 5 gives the people in the flood, the hazard classes H1 to H6 of the
+Australian flood hazard guideline (AIDR 2017, Guideline 7-3), the schools, health units,
+emergency services and roads in each class, and the self-rescue zone (ZAS).
+
+- People come from WorldPop 2020 through Earth Engine, so they need the Earth Engine
+  project above, for dams in Brazil and elsewhere. Only the dam's own area is read, about
+  1 MB or less, and it is saved with the dam. Without a project the report has no people,
+  and the rest still works.
+- Facilities and roads come from OpenStreetMap through public Overpass servers. They are
+  sometimes busy; "Retry OpenStreetMap" asks again. The answer is saved with the dam.
+- The ZAS length is a setting (Settings, Risk report), 10 km by default. Use the value of
+  the dam's emergency plan (PAE) when you know it.
+- "Export report (PDF)" writes a five-page summary in English or Portuguese (maps, tables,
+  flooded facilities with coordinates, method and suggested actions) and opens it. Its
+  OpenStreetMap background needs internet.
+- The two demo dams come with their people and OpenStreetMap data.
 
 ## Your own Python (optional)
 
@@ -88,6 +108,8 @@ The preparation downloads public data, each under its own licence:
 | Land use in Brazil | MapBiomas Collection 10 (2024), through Earth Engine | CC BY 4.0 |
 | Land use outside Brazil | ESA WorldCover 2021, translated to MapBiomas classes | CC BY 4.0 |
 | Soil classes | OpenLandMap USDA texture classes (Zenodo 2525817) | CC BY-SA 4.0 |
+| Population | WorldPop 2020 constrained, 100 m, through Earth Engine | CC BY 4.0 |
+| Facilities and roads | OpenStreetMap, through the Overpass API | ODbL; © OpenStreetMap contributors |
 | Dam list | SNISB, Agência Nacional de Águas e Saneamento Básico | public data; cite ANA |
 | Basemap | OpenStreetMap | ODbL; © OpenStreetMap contributors |
 

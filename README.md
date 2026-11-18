@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><img src="https://img.shields.io/badge/release-v1.0.0-D62828" alt="Release v1.0.0"></a>
+  <a href="../../releases/latest"><img src="https://img.shields.io/badge/release-v1.1.0-D62828" alt="Release v1.1.0"></a>
   <img src="https://img.shields.io/badge/QGIS-3.22%2B-589632?logo=qgis&logoColor=white" alt="QGIS 3.22 or later">
   <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10 or later">
   <img src="https://img.shields.io/badge/PyTorch-CPU-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch on the CPU">
@@ -52,6 +52,8 @@ established methods side by side. Everything runs inside QGIS, on your own compu
 | 🔎 | **Any SNISB dam, or your own.** Search the 28,083 dams of Brazil's SNISB inventory by name, town or code, or click one on the map. For any other dam, anywhere in the world, draw its crest and type its height, volume and material. |
 | 🛰️ | **The data, found for you.** FABDEM terrain, land use (MapBiomas in Brazil, through Google Earth Engine, or ESA WorldCover elsewhere) and OpenLandMap soil classes are downloaded and put on one grid. The flood domain and the breach hydrograph come from the dam's attributes. |
 | 🚦 | **A quality check you can act on.** Each map is checked for a flood broken into separate patches and for a wet area far from that of LNEC/ANA. The panel then says *rapid map* or *check with a 2D model*. |
+| 👥 | **Who and what is in the way.** People in the flood at three depths (WorldPop, through Earth Engine), the hazard classes H1 to H6 of the Australian flood hazard guideline (AIDR 2017), the schools, health units, emergency services and roads in each class (OpenStreetMap), and the self-rescue zone (ZAS) below the dam. |
+| 📄 | **A report to share.** One click writes a five-page PDF in English or Portuguese: maps, tables, the flooded facilities with coordinates, the method, and suggested actions tied to the AIDR guideline and Brazil's ANA rules for emergency action plans. |
 | ⚠️ | **Plain warnings.** The panel says when a dam lies outside the range DamBreakNet learned from, when its land cover is translated from ESA WorldCover, when the preparation flags a domain for review, and why a method could not run. |
 | ⏱️ | **Fast.** A prepared dam runs in 15 to 40 seconds on a laptop CPU. A new dam took about 2 minutes in our test, most of it to download the terrain. |
 
@@ -60,7 +62,7 @@ established methods side by side. Everything runs inside QGIS, on your own compu
 You do this once.
 
 1. **Install QGIS** 3.22 or later from [qgis.org](https://qgis.org). It is free.
-2. **Download** `DamBreakNet_v1.0.0.zip` from the [latest release](../../releases/latest).
+2. **Download** `DamBreakNet_v1.1.0.zip` from the [latest release](../../releases/latest).
    Do not unzip it.
 3. **Install the plugin.** In QGIS, open **Plugins → Manage and Install Plugins → Install from
    ZIP**, choose the zip and click **Install Plugin**. A red DamBreakNet icon appears in the
@@ -83,7 +85,7 @@ More detail, including your own Python and how to remove the plugin, is in
 
 ## Use it in QGIS
 
-The **Run** tab has four numbered steps.
+The **Run** tab has five numbered steps.
 
 <p align="center">
   <img src="images/panel_steps.png" alt="Steps 1 to 3 of the DamBreakNet panel: finding Nilo Coelho dam, preparing the inputs and running the three methods" width="46%">
@@ -108,6 +110,12 @@ The **Run** tab has four numbered steps.
    - **Check with a 2D model**: the DamBreakNet map breaks into patches in at least two of its
      three models, or its wet area is far from that of LNEC/ANA. Plan a detailed study for
      this dam.
+5. **Read the risk.** Two tables give the people in the flood at 0.05, 0.30 and 1.00 m for each
+   method and in the self-rescue zone (ZAS), and, for DamBreakNet, the people, area, schools,
+   health units, emergency services and roads in each hazard class, H1 (generally safe) to H6
+   (unsafe for people and vehicles, buildings can fail). Choose English or Português and click
+   **Export report (PDF)** for a five-page summary. The ZAS length is set in **Settings**, 10 km
+   by default; use the dam's emergency plan (PAE) value when you know it.
 
 The **Guide** tab repeats these steps inside QGIS, and the **Log** tab shows the full output of
 every step.
@@ -120,10 +128,13 @@ every step.
 | DamBreakNet | maximum depth, maximum velocity, maximum hazard, number of models that flood each cell | m, m/s, m²/s, 0 to 3 |
 | LNEC/ANA | maximum depth | m |
 | HAND | maximum depth | m |
+| Risk | hazard class H1 to H6 (DamBreakNet), self-rescue zone, flooded facilities | class, outline, points |
 
 Every map is a GeoTIFF in the Outputs folder (set in the Settings tab), so you can open it in
 any GIS, style it, clip it or overlay it on population and buildings. Hazard is the largest
-product of depth and velocity in each cell.
+product of depth and velocity in each cell. The risk report sits in the run's `risk` folder as
+CSV, JSON and, when exported, PDF. After a run only DamBreakNet and the risk layers are drawn;
+tick the LNEC/ANA and HAND groups to compare.
 
 ## How accurate is it?
 
@@ -153,6 +164,11 @@ cross-sections. Full results are in the paper (see [How to cite](#how-to-cite)).
 - These are rapid maps of the maximum flood for one breach scenario per dam, over the first
   20 km below the dam. They do not give arrival times, and they do not replace a detailed
   two-dimensional study.
+- The risk report counts people from a modelled layer (WorldPop 2020), so it indicates exposure
+  rather than counting residents. The paper used the WorldPop 2025 file for Brazil, and the two
+  can differ, most for small rural counts. OpenStreetMap can miss facilities and roads.
+- The self-rescue zone here is a distance along the valley. Brazil's rule (Resolution ANA
+  121/2022) uses the distance the wave reaches in 30 minutes, which these maps do not give.
 - Tested on macOS with QGIS 3.44. Windows and Linux are not tested yet.
 
 ## Questions
@@ -196,7 +212,7 @@ needed first.
 <details>
 <summary><b>Engine setup failed on Windows with "remove_all: The directory is not empty"?</b></summary>
 
-Install version 1.0.0 and click **Set up the engine** again. Version 0.2.0 built folder paths
+Install version 1.0.0 or later and click **Set up the engine** again. Version 0.2.0 built folder paths
 longer than the 260 characters Windows allows. Version 1.0.0 keeps them to at most 209. This fix
 has not been tested on a Windows computer yet, so please tell us what happens.
 </details>
