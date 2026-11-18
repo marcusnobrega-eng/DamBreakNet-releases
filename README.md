@@ -117,6 +117,16 @@ The **Run** tab has five numbered steps.
    **Export report (PDF)** for a five-page summary. The ZAS length is set in **Settings**, 10 km
    by default; use the dam's emergency plan (PAE) value when you know it.
 
+Step 5 and the PDF report for Pirapama dam (Cabo de Santo Agostinho, Pernambuco):
+
+<p align="center">
+  <img src="images/panel_risk.png" alt="Step 5 of the DamBreakNet panel for Pirapama dam: people in the flood by method and depth, hazard classes H1 to H6 with people, schools, health units and roads, the self-rescue zone, and the PDF export button" width="46%">
+</p>
+
+<p align="center">
+  <img src="images/report_pages.png" alt="Pages 1, 2 and 5 of the DamBreakNet PDF report for Pirapama dam: key numbers and the hazard-class map, the depth map with the people and hazard-class tables, and the suggested actions with their sources" width="100%">
+</p>
+
 The **Guide** tab repeats these steps inside QGIS, and the **Log** tab shows the full output of
 every step.
 
